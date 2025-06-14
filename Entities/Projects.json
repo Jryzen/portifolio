@@ -1,0 +1,56 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do projeto"
+    },
+    "access_link": {
+      "type": "string",
+      "description": "URL para acessar o projeto"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "systems",
+        "applications",
+        "dashboards"
+      ],
+      "description": "Categoria do projeto"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição opcional do projeto"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se o projeto está ativo e deve ser exibido"
+    },
+    "resources": {
+      "type": "array",
+      "description": "Lista de recursos disponíveis",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "highlight_tag": {
+      "type": "string",
+      "description": "Tag de destaque opcional (ex: DESTAQUE)"
+    }
+  },
+  "required": [
+    "name",
+    "access_link",
+    "category"
+  ]
+}
